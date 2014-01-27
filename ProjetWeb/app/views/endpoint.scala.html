@@ -1,0 +1,105 @@
+@(resultat :String)
+
+@import helper._
+@main("SPARQL EndPoint") {
+  <div class="row" style="background-color:blue;">
+   <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">           
+          </a>
+          <a class="brand" href="/">
+          <img src="@routes.Assets.at("images/logo-petit.png")" width="28" height="18" />
+           eStatViz</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="/">Accueil</a></li>
+              <li><a href="/formComp">Vos Données</a></li>
+              <li class="active"><a href="/endpoint">EndPoint</a></li>
+            </ul>
+            <form class="navbar-form pull-right">
+              <input class="span2" type="text" placeholder="Email">
+              <input class="span2" type="password" placeholder="Password">
+              <button type="submit" class="btn">S'authentifier</button>
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit" style="background-color:rgba(56,103,251,0.3); height: 170px;">
+        <h3><img src="@routes.Assets.at("images/logo.png")" width="100" height="100" /> Visualisez et comparez les chiffres de consommation des différents produits. </h3>
+        <blockquote>
+           Cette application vous permet de visualiser sous forme  de courbes des statistiques de 
+           consommation de différents produits, déliquance, Tourisme, etc. Dans différentes dates, de plusieurs pays européens. Vous pouvez aussi comparez ces chiffres,
+           les commenter.............................. 
+        </blockquote>
+        <p><a class="btn btn-primary " href="">Plus de détails &raquo;</a></p>
+      </div>
+	  <!-- Formulaire de saisie -->
+	    <!-- Commentaire -->   
+	  <div class="row">  
+      <div class="span8" style="border: 1px solid black;margin-bottom: 30px;border-radius:5px;">
+      
+      <form class="formEndPoint" method="post" action="/result" style="background-color:rgba(56,103,251,0.1);padding: 10px;border-radius:5px;">
+        
+         <fieldset>
+                <legend> Vos Requêtes SPARQL </legend>
+           
+            
+            <p>
+               <label for="requete">Requête:</label>
+              <textarea name="requete" id="requete" style="width:730px;height:200px;">
+              
+              </textarea> 
+            
+            </p>
+            
+          
+            
+            
+           </fieldset>
+           
+           <!-- Button -->
+           <div class="control-group" >
+             <label class="control-label" for="validez"></label>
+             <div class="controls" style="margin-left:45%;">
+                <button id="validez" name="validez" class="btn btn-primary">Validez</button>
+             </div>
+           </div>
+        
+        </form>
+      
+   
+      
+      </div>
+      <!-- Image -->      
+      <div class="span3" style="border: 1px solid black; height:393px;margin-bottom: 30px;margin-left:4%;border-radius:5px;">
+      <img src="@routes.Assets.at("images/vizRight.jpg")" />
+      
+      
+      </div>
+	  
+     </div> <!-- Fin de la ligne -->  
+   
+   <!--  Lignes du résultat SPARQL -->
+   		<h1>Résultats de la requête</h1>
+       <div class="row" style="margin-bottom:5px;margin-left:5px;border: 1px solid black">
+   		     @resultat 
+		
+	
+	
+	   </div>
+	
+
+
+      <footer>
+        <p>&copy; EuroStatViz 2013</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+}

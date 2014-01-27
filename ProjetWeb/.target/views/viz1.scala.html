@@ -1,0 +1,84 @@
+@(g: Graphe)
+@import helper._
+@import play.api.libs.json.Json 
+@main("Visualisation type 1") {
+  <div class="row" style="background-color:blue;">
+   <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">           
+          </a>
+          <a class="brand" href="/">
+          <img src="@routes.Assets.at("images/logo-petit.png")" width="28" height="18" />
+           eStatViz</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="/">Accueil</a></li>
+               <li><a href="/formComp">Vos Données</a></li>
+              <li><a href="/endpoint">EndPoint</a></li>
+            </ul>
+            <form class="navbar-form pull-right">
+              <input class="span2" type="text" placeholder="Email">
+              <input class="span2" type="password" placeholder="Password">
+              <button type="submit" class="btn">S'authentifier</button>
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit" style="background-color:rgba(56,103,251,0.3); height: 170px;">
+        <h3><img src="@routes.Assets.at("images/logo.png")" width="100" height="100" /> Visualisez et comparez les chiffres de consommation des différents produits. </h3>
+        <blockquote>
+           Cette application vous permet de visualiser sous forme  de courbes des statistiques de 
+           consommation de différents produits, déliquance, Tourisme, etc. Dans différentes dates, de plusieurs pays européens. Vous pouvez aussi comparez ces chiffres,
+           les commenter.............................. 
+        </blockquote>
+        <p><a class="btn btn-primary " href="">Plus de détails &raquo;</a></p>
+      </div>
+	  <!-- Le graphe de visualisation et commentaire-->
+      <div class="row">
+      <!-- Le graphe  -->
+      <p style="margin-left: 30%;align:center;"> Visualisez le graphe: </p>
+      <div class="span8" style="border: 1px solid black; width:70%;height:300px;margin-bottom: 30px;border-radius:5px;">
+      
+      <div id="container" style="min-width: 310px; height: 250px; margin: 0 auto">
+      
+      <script type="text/javascript">
+      
+      var jsonObj = @Html(g.graphe); 
+      $(function () {
+    	 
+          $('#container').highcharts(jsonObj);
+      });
+      
+      
+      
+      
+      
+      </script>
+     
+     </div> 
+      
+      
+      </div>
+      <!-- Image -->      
+      <div class="span3" style="border: 1px solid black; height:300px;margin-bottom: 30px;margin-left:4%;border-radius:5px;">
+      <img src="@routes.Assets.at("images/vizRight.jpg")" />
+      
+      
+      </div>
+      
+      </div>
+
+
+      <footer>
+        <p>&copy; EuroStatViz 2013</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+}

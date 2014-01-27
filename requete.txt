@@ -1,0 +1,20 @@
+SELECT ?Graphe ?Pays ?Date ?Valeur 
+				 FROM <resources/local-data-base.rdf> 
+		 		 FROM <input/crim_gen.ttl> 
+				 WHERE { ?s owl:sameAs ?o  . ?Graphe dc:subject ?s . 
+									?w qb:dataSet ?o  . 
+									 ?w sdmx-dimension:timePeriod ?Date  . 
+							 		?w sdmx-measure:obsValue ?Valeur . 
+						 		      ?w property:geo ?yy . 
+						 		      ?yy skos:prefLabel  ?Pays  .
+						 		     
+							 		  ?w property:crim ?z . 
+							 	  	 ?z skos:notation ?l . 	
+							 	  	 FILTER regex( ?l ,"VIOLT" ) . 
+
+						
+						FILTER ( ?Date > "2000-01-01"^^xsd:date && ?Date < "2006-01-01"^^xsd:date ) . 
+ 					 		
+						 	
+						 		FILTER(langMatches(lang(?Pays), 'fr')) 
+				 		} LIMIT 10  

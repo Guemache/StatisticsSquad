@@ -1,0 +1,542 @@
+@prefix sdmx-measure:  <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix concept:  <http://eurostat.linked-statistics.org/concept#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dic:     <http://eurostat.linked-statistics.org/dic/> .
+@prefix data:    <http://eurostat.linked-statistics.org/data/> .
+@prefix sdmx-concept:  <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix property:  <http://eurostat.linked-statistics.org/property#> .
+@prefix dss:     <http://eurostat.linked-statistics.org/dss#> .
+@prefix qb:      <http://purl.org/linked-data/cube#> .
+@prefix sdmx-code:  <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix title:   <http://eurostat.linked-statistics.org/title#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdmx:    <http://purl.org/linked-data/sdmx#> .
+@prefix dsd:     <http://eurostat.linked-statistics.org/dsd/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+
+<http://eurostat.linked-statistics.org/dic/geo#HR>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "HR" ;
+      skos:prefLabel "Kroatien"@de , "Croatie"@fr , "Croatia"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#RO>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "RO" ;
+      skos:prefLabel "Romania"@en , "Rumänien"@de , "Roumanie"@fr .
+
+property:crim
+      rdf:type qb:DimensionProperty , qb:CodedProperty ;
+      rdfs:domain qb:Observation ;
+      rdfs:range skos:Concept ;
+      qb:codeList dic:crim ;
+      qb:concept concept:crim .
+
+<http://eurostat.linked-statistics.org/dic/geo#EE>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "EE" ;
+      skos:prefLabel "Estonie"@fr , "Estonia"@en , "Estland"@de .
+
+property:obs_status
+      rdf:type qb:AttributeProperty , qb:CodedProperty ;
+      rdfs:domain qb:Observation ;
+      rdfs:range skos:Concept ;
+      qb:codeList dic:obs_status ;
+      qb:concept concept:obs_status .
+
+<http://eurostat.linked-statistics.org/dic/geo#US>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "US" ;
+      skos:prefLabel "United States"@en , "Vereinigte Staaten"@de , "États-Unis"@fr .
+
+<http://eurostat.linked-statistics.org/dic/obs_status#r>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:obs_status ;
+      skos:notation "r" ;
+      skos:prefLabel "revidiert"@de , "révisé"@fr , "revised"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#MT>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "MT" ;
+      skos:prefLabel "Malta"@de , "Malta"@en , "Malte"@fr .
+
+<http://eurostat.linked-statistics.org/dic/obs_status#u>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:obs_status ;
+      skos:notation "u" ;
+      skos:prefLabel "geringe Zuverlässigkeit"@de , "peu fiable"@fr , "low reliability"@en .
+
+<http://eurostat.linked-statistics.org/dic/obs_status#n>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:obs_status ;
+      skos:notation "n" ;
+      skos:prefLabel "non significatif"@fr , "unbedeutend"@de , "not significant"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#DK>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "DK" ;
+      skos:prefLabel "Dänemark"@de , "Danemark"@fr , "Denmark"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#ES>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "ES" ;
+      skos:prefLabel "Espagne"@fr , "Spanien"@de , "Spain"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#LU>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "LU" ;
+      skos:prefLabel "Luxemburg"@de , "Luxembourg"@fr , "Luxembourg"@en .
+
+concept:unit
+      rdf:type sdmx:Concept ;
+      skos:inScheme concept: ;
+      skos:notation "unit" ;
+      skos:prefLabel "Einheit"@de , "Unité"@fr , "Unit"@en .
+
+<http://eurostat.linked-statistics.org/dic/crim#VIOLT>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:crim ;
+      skos:notation "VIOLT" ;
+      skos:prefLabel "Violent crime"@en , "Gewaltdelikte"@de , "Crimes et délits violents"@fr .
+
+concept:time_format
+      rdf:type sdmx:Concept ;
+      skos:inScheme concept: ;
+      skos:notation "time_format" ;
+      skos:prefLabel "Time Format"@en .
+
+<http://eurostat.linked-statistics.org/dic/obs_status#f>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:obs_status ;
+      skos:notation "f" ;
+      skos:prefLabel "forecast"@en , "Prognose"@de , "prévision"@fr .
+
+<http://eurostat.linked-statistics.org/dic/obs_status#b>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:obs_status ;
+      skos:notation "b" ;
+      skos:prefLabel "rupture de série"@fr , "Zeitreihenbruch"@de , "break in time series"@en .
+
+dic:crim
+      rdf:type skos:ConceptScheme ;
+      rdfs:label "Infraction"@fr , "Offence"@en , "Straftat"@de ;
+      skos:hasTopConcept <http://eurostat.linked-statistics.org/dic/crim#DBURG> , <http://eurostat.linked-statistics.org/dic/crim#DRUGT> , <http://eurostat.linked-statistics.org/dic/crim#HCIDE> , <http://eurostat.linked-statistics.org/dic/crim#VTHFT> , <http://eurostat.linked-statistics.org/dic/crim#VIOLT> , <http://eurostat.linked-statistics.org/dic/crim#ROBBR> , <http://eurostat.linked-statistics.org/dic/crim#TOTAL> ;
+      skos:notation "cl_crim" .
+
+<http://eurostat.linked-statistics.org/dic/crim#DRUGT>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:crim ;
+      skos:notation "DRUGT" ;
+      skos:prefLabel "Drug trafficking"@en , "Trafic de stupéfiants"@fr , "Drogenhandel"@de .
+
+<http://eurostat.linked-statistics.org/dic/geo#ME>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "ME" ;
+      skos:prefLabel "Montenegro"@de , "Montenegro"@en , "Monténégro"@fr .
+
+<http://eurostat.linked-statistics.org/dic/geo#NO>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "NO" ;
+      skos:prefLabel "Norvège"@fr , "Norway"@en , "Norwegen"@de .
+
+<http://eurostat.linked-statistics.org/dic/geo#SK>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "SK" ;
+      skos:prefLabel "Slovaquie"@fr , "Slowakei"@de , "Slovakia"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#PT>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "PT" ;
+      skos:prefLabel "Portugal"@de , "Portugal"@fr , "Portugal"@en .
+
+dic:unit
+      rdf:type skos:ConceptScheme ;
+      rdfs:label "Einheit"@de , "Unité"@fr , "Unit"@en ;
+      skos:hasTopConcept <http://eurostat.linked-statistics.org/dic/unit#NR> ;
+      skos:notation "cl_unit" .
+
+<http://eurostat.linked-statistics.org/dic/geo#XK>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "XK" ;
+      skos:prefLabel "Kosovo (gemäß der Resolution 1244/99 des Sicherheitsrates der Vereinten Nationen)"@de , "Kosovo (under United Nations Security Council Resolution 1244/99)"@en , "Kosovo (selon la résolution 1244/99 du Conseil de sécurité des Nations Unies)"@fr .
+
+<http://eurostat.linked-statistics.org/dic/geo#LI>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "LI" ;
+      skos:prefLabel "Liechtenstein"@de , "Liechtenstein"@fr , "Liechtenstein"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#BG>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "BG" ;
+      skos:prefLabel "Bulgarien"@de , "Bulgaria"@en , "Bulgarie"@fr .
+
+<http://eurostat.linked-statistics.org/dic/geo#LT>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "LT" ;
+      skos:prefLabel "Litauen"@de , "Lituanie"@fr , "Lithuania"@en .
+
+<http://eurostat.linked-statistics.org/dic/unit#NR>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:unit ;
+      skos:notation "NR" ;
+      skos:prefLabel "Number"@en , "Nombre"@fr , "Anzahl"@de .
+
+property:geo
+      rdf:type qb:DimensionProperty , qb:CodedProperty ;
+      rdfs:domain qb:Observation ;
+      rdfs:range skos:Concept ;
+      qb:codeList dic:geo ;
+      qb:concept concept:geo .
+
+concept:geo
+      rdf:type sdmx:Concept ;
+      skos:inScheme concept: ;
+      skos:notation "geo" ;
+      skos:prefLabel "Geopolitische Meldeeinheit"@de , "Entité géopolitique (déclarante)"@fr , "Geopolitical entity (reporting)"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#ZA>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "ZA" ;
+      skos:prefLabel "South Africa"@en , "Südafrika"@de , "Afrique du Sud"@fr .
+
+dsd:crim_gen
+      rdf:type qb:DataStructureDefinition ;
+      qb:component
+              [ qb:dimension sdmx-measure:obsValue
+              ] ;
+      qb:component
+              [ qb:dimension property:geo
+              ] ;
+      qb:component
+              [ qb:dimension property:unit
+              ] ;
+      qb:component
+              [ qb:dimension property:crim
+              ] ;
+      qb:component
+              [ qb:dimension dcterms:date
+              ] ;
+      qb:component
+              [ qb:dimension sdmx-dimension:freq
+              ] ;
+      qb:component
+              [ qb:attribute property:obs_status
+              ] ;
+      skos:notation "crim_gen_DSD" .
+
+<http://eurostat.linked-statistics.org/dic/obs_status#s>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:obs_status ;
+      skos:notation "s" ;
+      skos:prefLabel "estimation Eurostat"@fr , "Eurostat Schätzung"@de , "Eurostat estimate"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#FR>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "FR" ;
+      skos:prefLabel "Frankreich"@de , "France"@fr , "France"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#BA>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "BA" ;
+      skos:prefLabel "Bosnie-et-Herzégovine"@fr , "Bosnia and Herzegovina"@en , "Bosnien und Herzegowina"@de .
+
+<http://eurostat.linked-statistics.org/dic/crim#TOTAL>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:crim ;
+      skos:notation "TOTAL" ;
+      skos:prefLabel "Insgesamt"@de , "Total"@fr , "Total"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#CA>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "CA" ;
+      skos:prefLabel "Kanada"@de , "Canada"@fr , "Canada"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#JP>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "JP" ;
+      skos:prefLabel "Japon"@fr , "Japan"@de , "Japan"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#RU>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "RU" ;
+      skos:prefLabel "Russia"@en , "Russie"@fr , "Russland"@de .
+
+<http://eurostat.linked-statistics.org/dic/geo#IT>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "IT" ;
+      skos:prefLabel "Italie"@fr , "Italien"@de , "Italy"@en .
+
+property:unit
+      rdf:type qb:DimensionProperty , qb:CodedProperty ;
+      rdfs:domain qb:Observation ;
+      rdfs:range skos:Concept ;
+      qb:codeList dic:unit ;
+      qb:concept concept:unit .
+
+<http://eurostat.linked-statistics.org/dic/crim#ROBBR>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:crim ;
+      skos:notation "ROBBR" ;
+      skos:prefLabel "Vols avec violence"@fr , "Robbery"@en , "Raubdelikte"@de .
+
+concept:obs_status
+      rdf:type sdmx:Concept ;
+      skos:inScheme concept: ;
+      skos:notation "obs_status" ;
+      skos:prefLabel "Observation Status"@en .
+
+<http://eurostat.linked-statistics.org/dic/obs_status#p>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:obs_status ;
+      skos:notation "p" ;
+      skos:prefLabel "vorläufig"@de , "provisional"@en , "provisoire"@fr .
+
+<http://eurostat.linked-statistics.org/dic/geo#DE>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "DE" ;
+      skos:prefLabel "Allemagne (jusqu'en 1990, ancien territoire de la RFA)"@fr , "Germany (until 1990 former territory of the FRG)"@en , "Deutschland (bis 1990 früheres Gebiet der BRD)"@de .
+
+<http://eurostat.linked-statistics.org/dic/geo#AT>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "AT" ;
+      skos:prefLabel "Austria"@en , "Autriche"@fr , "Österreich"@de .
+
+<http://eurostat.linked-statistics.org/dic/obs_status#c>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:obs_status ;
+      skos:notation "c" ;
+      skos:prefLabel "confidentiel"@fr , "confidential"@en , "vertraulich"@de .
+
+<http://eurostat.linked-statistics.org/dic/geo#AL>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "AL" ;
+      skos:prefLabel "Albanie"@fr , "Albania"@en , "Albanien"@de .
+
+<http://eurostat.linked-statistics.org/dic/crim#VTHFT>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:crim ;
+      skos:notation "VTHFT" ;
+      skos:prefLabel "Kraftfahrzeugdiebstahl"@de , "Motor vehicle theft"@en , "Vols de véhicules à moteur"@fr .
+
+<http://eurostat.linked-statistics.org/dic/crim#HCIDE>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:crim ;
+      skos:notation "HCIDE" ;
+      skos:prefLabel "Homicides"@fr , "Homicide"@en , "Tötungsdelikte"@de .
+
+<http://eurostat.linked-statistics.org/dic/geo#UKN>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "UKN" ;
+      skos:prefLabel "Northern Ireland (UK)"@de , "Northern Ireland (UK)"@fr , "Northern Ireland (UK)"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#NL>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "NL" ;
+      skos:prefLabel "Netherlands"@en , "Niederlande"@de , "Pays-Bas"@fr .
+
+<http://eurostat.linked-statistics.org/dic/geo#MK>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "MK" ;
+      skos:prefLabel "Die ehemalige jugoslawische Republik Mazedonien"@de , "Ancienne République yougoslave de Macédoine"@fr , "Former Yugoslav Republic of Macedonia, the"@en .
+
+<http://eurostat.linked-statistics.org/dic/crim#DBURG>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:crim ;
+      skos:notation "DBURG" ;
+      skos:prefLabel "Wohnungseinbrüche"@de , "Cambriolages dans un lieu d'habitation"@fr , "Domestic burglary"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#PL>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "PL" ;
+      skos:prefLabel "Poland"@en , "Polen"@de , "Pologne"@fr .
+
+<http://eurostat.linked-statistics.org/dic/geo#SI>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "SI" ;
+      skos:prefLabel "Slowenien"@de , "Slovénie"@fr , "Slovenia"@en .
+
+concept:crim
+      rdf:type sdmx:Concept ;
+      skos:inScheme concept: ;
+      skos:notation "crim" ;
+      skos:prefLabel "Infraction"@fr , "Offence"@en , "Straftat"@de .
+
+<http://eurostat.linked-statistics.org/dic/geo#EL>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "EL" ;
+      skos:prefLabel "Griechenland"@de , "Greece"@en , "Grèce"@fr .
+
+<http://eurostat.linked-statistics.org/dic/geo#NZ>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "NZ" ;
+      skos:prefLabel "New Zealand"@en , "Nouvelle-Zélande"@fr , "Neuseeland"@de .
+
+<http://eurostat.linked-statistics.org/dic/geo#BE>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "BE" ;
+      skos:prefLabel "Belgique"@fr , "Belgien"@de , "Belgium"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#HU>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "HU" ;
+      skos:prefLabel "Ungarn"@de , "Hongrie"@fr , "Hungary"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#IS>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "IS" ;
+      skos:prefLabel "Iceland"@en , "Islande"@fr , "Island"@de .
+
+<http://eurostat.linked-statistics.org/dic/geo#CZ>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "CZ" ;
+      skos:prefLabel "Tschechische Republik"@de , "République tchèque"@fr , "Czech Republic"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#FX>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "FX" ;
+      skos:prefLabel "France (metropolitan)"@en , "France (métropolitaine)"@fr , "Frankreich (metropolitanes)"@de .
+
+<http://eurostat.linked-statistics.org/dic/obs_status#z>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:obs_status ;
+      skos:notation "z" ;
+      skos:prefLabel "nicht zutreffend"@de , "not applicable"@en , "non applicable"@fr .
+
+dic:geo
+      rdf:type skos:ConceptScheme ;
+      rdfs:label "Geopolitische Meldeeinheit"@de , "Entité géopolitique (déclarante)"@fr , "Geopolitical entity (reporting)"@en ;
+      skos:hasTopConcept <http://eurostat.linked-statistics.org/dic/geo#HR> , <http://eurostat.linked-statistics.org/dic/geo#RO> , <http://eurostat.linked-statistics.org/dic/geo#EE> , <http://eurostat.linked-statistics.org/dic/geo#US> , <http://eurostat.linked-statistics.org/dic/geo#MT> , <http://eurostat.linked-statistics.org/dic/geo#DK> , <http://eurostat.linked-statistics.org/dic/geo#ES> , <http://eurostat.linked-statistics.org/dic/geo#LU> , <http://eurostat.linked-statistics.org/dic/geo#SK> , <http://eurostat.linked-statistics.org/dic/geo#NO> , <http://eurostat.linked-statistics.org/dic/geo#ME> , <http://eurostat.linked-statistics.org/dic/geo#PT> , <http://eurostat.linked-statistics.org/dic/geo#XK> , <http://eurostat.linked-statistics.org/dic/geo#LI> , <http://eurostat.linked-statistics.org/dic/geo#BG> , <http://eurostat.linked-statistics.org/dic/geo#LT> , <http://eurostat.linked-statistics.org/dic/geo#ZA> , <http://eurostat.linked-statistics.org/dic/geo#FR> , <http://eurostat.linked-statistics.org/dic/geo#BA> , <http://eurostat.linked-statistics.org/dic/geo#CA> , <http://eurostat.linked-statistics.org/dic/geo#JP> , <http://eurostat.linked-statistics.org/dic/geo#RU> , <http://eurostat.linked-statistics.org/dic/geo#IT> , <http://eurostat.linked-statistics.org/dic/geo#AT> , <http://eurostat.linked-statistics.org/dic/geo#DE> , <http://eurostat.linked-statistics.org/dic/geo#AL> , <http://eurostat.linked-statistics.org/dic/geo#UKN> , <http://eurostat.linked-statistics.org/dic/geo#NL> , <http://eurostat.linked-statistics.org/dic/geo#PL> , <http://eurostat.linked-statistics.org/dic/geo#MK> , <http://eurostat.linked-statistics.org/dic/geo#SI> , <http://eurostat.linked-statistics.org/dic/geo#EL> , <http://eurostat.linked-statistics.org/dic/geo#NZ> , <http://eurostat.linked-statistics.org/dic/geo#BE> , <http://eurostat.linked-statistics.org/dic/geo#HU> , <http://eurostat.linked-statistics.org/dic/geo#IS> , <http://eurostat.linked-statistics.org/dic/geo#FX> , <http://eurostat.linked-statistics.org/dic/geo#CZ> , <http://eurostat.linked-statistics.org/dic/geo#AU> , <http://eurostat.linked-statistics.org/dic/geo#CH> , <http://eurostat.linked-statistics.org/dic/geo#SE> , <http://eurostat.linked-statistics.org/dic/geo#LV> , <http://eurostat.linked-statistics.org/dic/geo#TR> , <http://eurostat.linked-statistics.org/dic/geo#UKM> , <http://eurostat.linked-statistics.org/dic/geo#CY> , <http://eurostat.linked-statistics.org/dic/geo#FI> , <http://eurostat.linked-statistics.org/dic/geo#IE> , <http://eurostat.linked-statistics.org/dic/geo#RS> , <http://eurostat.linked-statistics.org/dic/geo#UKC-L> ;
+      skos:notation "cl_geo" .
+
+<http://eurostat.linked-statistics.org/dic/geo#CH>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "CH" ;
+      skos:prefLabel "Switzerland"@en , "Schweiz"@de , "Suisse"@fr .
+
+<http://eurostat.linked-statistics.org/dic/geo#AU>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "AU" ;
+      skos:prefLabel "Australie"@fr , "Australien"@de , "Australia"@en .
+
+dic:obs_status
+      rdf:type skos:ConceptScheme ;
+      rdfs:label "Observation status code list"@en ;
+      skos:hasTopConcept <http://eurostat.linked-statistics.org/dic/obs_status#f> , <http://eurostat.linked-statistics.org/dic/obs_status#z> , <http://eurostat.linked-statistics.org/dic/obs_status#b> , <http://eurostat.linked-statistics.org/dic/obs_status#p> , <http://eurostat.linked-statistics.org/dic/obs_status#e> , <http://eurostat.linked-statistics.org/dic/obs_status#r> , <http://eurostat.linked-statistics.org/dic/obs_status#s> , <http://eurostat.linked-statistics.org/dic/obs_status#d> , <http://eurostat.linked-statistics.org/dic/obs_status#i> , <http://eurostat.linked-statistics.org/dic/obs_status#c> , <http://eurostat.linked-statistics.org/dic/obs_status#u> , <http://eurostat.linked-statistics.org/dic/obs_status#n> ;
+      skos:notation "cl_obs_status" .
+
+<http://eurostat.linked-statistics.org/dic/geo#SE>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "SE" ;
+      skos:prefLabel "Suède"@fr , "Sweden"@en , "Schweden"@de .
+
+<http://eurostat.linked-statistics.org/dic/obs_status#d>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:obs_status ;
+      skos:notation "d" ;
+      skos:prefLabel "abweichende Definition, siehe Metadaten"@de , "definition differs, see metadata"@en , "définition différente, voir métadonnées"@fr .
+
+<http://eurostat.linked-statistics.org/dic/geo#LV>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "LV" ;
+      skos:prefLabel "Latvia"@en , "Lettland"@de , "Lettonie"@fr .
+
+<http://eurostat.linked-statistics.org/dic/geo#TR>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "TR" ;
+      skos:prefLabel "Turquie"@fr , "Türkei"@de , "Turkey"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#UKM>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "UKM" ;
+      skos:prefLabel "Scotland"@de , "Scotland"@fr , "Scotland"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#CY>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "CY" ;
+      skos:prefLabel "Zypern"@de , "Cyprus"@en , "Chypre"@fr .
+
+<http://eurostat.linked-statistics.org/dic/geo#FI>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "FI" ;
+      skos:prefLabel "Finlande"@fr , "Finnland"@de , "Finland"@en .
+
+<http://eurostat.linked-statistics.org/dic/obs_status#e>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:obs_status ;
+      skos:notation "e" ;
+      skos:prefLabel "estimated"@en , "geschätzt"@de , "estimé"@fr .
+
+<http://eurostat.linked-statistics.org/dic/geo#IE>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "IE" ;
+      skos:prefLabel "Irland"@de , "Irlande"@fr , "Ireland"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#RS>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "RS" ;
+      skos:prefLabel "Serbie"@fr , "Serbien"@de , "Serbia"@en .
+
+<http://eurostat.linked-statistics.org/dic/obs_status#i>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:obs_status ;
+      skos:notation "i" ;
+      skos:prefLabel "siehe Metadaten"@de , "see metadata"@en , "voir métadonnées"@fr .
+
+<http://eurostat.linked-statistics.org/dic/geo#UKC-L>
+      rdf:type skos:Concept ;
+      skos:inScheme dic:geo ;
+      skos:notation "UKC-L" ;
+      skos:prefLabel "England und Wales"@de , "England et Wales"@fr , "England and Wales"@en .

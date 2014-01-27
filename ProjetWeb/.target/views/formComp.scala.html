@@ -1,0 +1,227 @@
+@(message: String)
+
+@main("eStatViz") {
+  <div class="row" style="background-color:blue;">
+   <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">           
+          </a>
+          <a class="brand" href="/">
+          <img src="@routes.Assets.at("images/logo-petit.png")" width="28" height="18" />
+           eStatViz</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="/">Accueil</a></li>
+			  <li class="active"><a href="/formComp">Vos Données</a></li>	
+              <li><a href="/endpoint">EndPoint</a></li>
+            </ul>
+            <form class="navbar-form pull-right">
+              <input class="span2" type="text" placeholder="Email">
+              <input class="span2" type="password" placeholder="Password">
+              <button type="submit" class="btn">S'authentifier</button>
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit" style="background-color:rgba(56,103,251,0.3); height: 170px;">
+        <h3><img src="@routes.Assets.at("images/logo.png")" width="100" height="100" /> Visualisez et comparez les chiffres de consommation des différents produits. </h3>
+        <blockquote>
+           Cette application vous permet de visualiser sous forme  de courbes des statistiques de 
+           consommation de différents produits, déliquance, Tourisme, etc. Dans différentes dates, de plusieurs pays européens. Vous pouvez aussi comparez ces chiffres,
+           les commenter.............................. 
+        </blockquote>
+        <p><a class="btn btn-primary " href="">Plus de détails &raquo;</a></p>
+      </div>
+	  <!--  Les formulaires -->
+      <!--  première ligne -->
+      <div class="row">
+        <div class="span6" style="background-color:rgba(56,103,251,0.4);border-radius: 5px;">
+         <div class="span5"> 
+            <h2 style="text-align:center;">Visualisez et Comparez</h2>
+         </div>
+          
+        </div>
+        
+       <div class="span6" style="background-color:rgba(56,103,251,0.4);border-radius: 5px;">
+         <div class="span5"> 
+              <!--  Mettre une image -->
+              <h2 style="text-align:center;">StAtIsTiCs SqUaDs</h2>
+              
+         </div>
+       </div>
+        
+      </div>
+      <!--  Deuxième ligne -->
+
+      <div class="row">
+      
+      
+      <div class="span6" style="background-color:#C4EAFF;border-radius: 5px;">
+        
+        <div id="accordionComp">
+        
+        <h3>Des pays, Une date, Un sujet</h3>
+  <div>
+    
+        <form class="formComp1" method="post" action="/comp3" style="background-color:rgba(56,103,251,0.1);padding: 10px;border-radius:5px;">
+        
+         <fieldset>
+                <legend> Choisissez et Validez</legend>
+                
+            <p>
+                <label for="anneeDebut">début :
+                <select name="anneeDebut" id="anneeDebut" required style="display:inline-block;margin-left:12%;">
+                <option value="1990-01-01">1990-01-01</option>
+                <option value="1991-01-01">1991-01-01</option>
+                <option value="1992-01-01">1992-01-01</option>
+                <option value="1993-01-01">1993-01-01</option>
+                <option value="1994-01-01">1994-01-01</option>
+                <option value="1995-01-01">1995-01-01</option>
+                <option value="1996-01-01">1996-01-01</option>
+                <option value="1997-01-01">1997-01-01</option>
+                <option value="1998-01-01">1998-01-01</option>
+                <option value="1999-01-01">1999-01-01</option>
+                <option value="2001-01-01">2001-01-01</option>
+                <option value="2002-01-01">2002-01-01</option>
+                <option value="2003-01-01">2003-01-01</option>
+                <option value="2004-01-01">2004-01-01</option>
+                <option value="2005-01-01">2005-01-01</option>
+                <option value="2006-01-01">2006-01-01</option>
+                <option value="2007-01-01">2007-01-01</option>
+                <option value="2008-01-01">2008-01-01</option>
+                <option value="2009-01-01" >2009-01-01</option>
+                <option value="2010-01-01">2010-01-01</option>
+                <option value="2011-01-01" >2011-01-01</option>
+                <option value="2012-01-01">2012-01-01</option>
+                </select>
+                </label> 
+            </p>
+            <p>
+                
+                <label for="anneeFin">fin :
+                <select name="anneeFin" id="anneeFin" required style="display:inline-block;margin-left:17%;">
+                <option value="1990-01-01">1990-01-01</option>
+                <option value="1991-01-01">1991-01-01</option>
+                <option value="1992-01-01">1992-01-01</option>
+                <option value="1993-01-01">1993-01-01</option>
+                <option value="1994-01-01">1994-01-01</option>
+                <option value="1995-01-01">1995-01-01</option>
+                <option value="1996-01-01">1996-01-01</option>
+                <option value="1997-01-01">1997-01-01</option>
+                <option value="1998-01-01">1998-01-01</option>
+                <option value="1999-01-01">1999-01-01</option>
+                <option value="2001-01-01">2001-01-01</option>
+                <option value="2002-01-01">2002-01-01</option>
+                <option value="2003-01-01">2003-01-01</option>
+                <option value="2004-01-01">2004-01-01</option>
+                <option value="2005-01-01">2005-01-01</option>
+                <option value="2006-01-01">2006-01-01</option>
+                <option value="2007-01-01">2007-01-01</option>
+                <option value="2008-01-01">2008-01-01</option>
+                <option value="2009-01-01">2009-01-01</option>
+                <option value="2010-01-01">2010-01-01</option>
+                <option value="2011-01-01">2011-01-01</option>
+                <option value="2012-01-01">2012-01-01</option>
+                </select>
+                </label> 
+            </p>
+            
+           
+           <p>
+                <label for="sujet">Sujet :
+                <select name="sujet" id="sujet" required style="display:inline-block;margin-left:13%;">
+                <optgroup label="Délinquance">
+                 <option value="DBURG">Cambriolage(lieu d'habitation)</option>
+                 <option value="DRUGT">Trafic de stupéfiants</option>
+                 <option value="HCIDE">Homicides</option>
+                 <option value="VTHFT">Vols(Véhicules à moteur)</option>
+                 <option value="VIOLT">Crimes et délits violents</option>
+                 <option value="ROBBR">Vols avec violence</option>
+                </optgroup>
+                <optgroup label="Autres">
+                <option value="tourisme">Tourisme</option>
+                </optgroup>
+                </select>
+                </label> 
+                
+            </p>
+            
+            
+           
+           <p>
+                <label for="pays1">Pays 1 :
+                <select name="pays1" id="pays1" required style="display:inline-block;margin-left:11%;">
+                <option value="France">France</option>
+                <option value="Allemagne">Allemagne</option>
+                <option value="Espagne">Espagne</option>
+                <option value="Albanie">Albanie</option>
+                <option value="Italie">Italie</option>
+                <option value="Suisse">Suisse</option>
+                <option value="Irlande">Irlande</option>
+                <option value="Autriche">Autriche</option>
+                <option value="Belgique" >Belgique</option>
+                <option value="Portugal">Portugal</option>
+                </select>
+                </label> 
+            </p>
+            
+             <p>
+               <label for="pays2">pays 2 : 
+               <input type="text" name="pays2" id="pays2" value="pays de votre choix"style="display:inline-block;margin-left:11%;" />
+               </label>
+            </p>
+            
+            <p>
+               <label for="pays2">valeurs : 
+               <input type="text" name="valeurs" id="valeurs" value="1234,4322,2233,..."style="display:inline-block;margin-left:10%;" />
+               </label>
+            </p>
+           
+           <p style="background-color:red">Remaque*: Séparez les valeurs par des virgules </p>
+           </fieldset>
+           
+           <!-- Button -->
+           <div class="control-group" >
+             <label class="control-label" for="validez"></label>
+             <div class="controls" style="margin-left:180px;">
+                <button id="validez" name="validez" class="btn btn-primary">Validez</button>
+             </div>
+           </div>
+        
+        </form>
+        
+  </div>       
+        
+</div>
+      </div>   
+      
+        <!-- Image -->
+        <div class="span6" style="border-radius: 5px;">
+          <img src="@routes.Assets.at("images/statistiques.png")" />
+      
+           
+      </div>
+      
+      
+      
+      
+   </div>
+      <hr>
+      
+		
+
+      <footer>
+        <p>&copy; EuroStatViz 2013</p>
+        
+        
+      </footer>
+
+    </div> <!-- /container -->
+
+}

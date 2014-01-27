@@ -1,0 +1,45 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+# redirection vers la page viz1
+
+POST  /viz1                controllers.ControleViz1.viz1()
+
+# redirection vers la page viz2
+
+POST  /viz2               controllers.ControleViz2.viz2()
+
+# redirection vers la page comp1
+
+POST  /comp1              controllers.ControleComp1.comp1()
+
+# redirection vers la page comp2
+
+POST  /comp2              controllers.ControleComp2.comp2()
+
+# redirection vers l'endPoint
+
+GET  /endpoint           controllers.ControleEndP.endpoint()
+
+# redirection vers la page formComp
+
+GET /formComp            controllers.ControleFormComp.formComp()
+
+# redirection vers vers la page comp3
+
+POST /comp3             controllers.ControleComp3.comp3()
+
+# redirection du formulaire du commentaire
+
+POST /comment          controllers.ControleComment.comment()
+
+# redirection formulaire endPoint
+
+POST /result          controllers.ControleResultatEndP.result()
